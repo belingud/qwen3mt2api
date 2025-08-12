@@ -1,0 +1,3 @@
+name = "qwenmt"
+main = "deno2cf.js"
+compatibility_date = "2025-08-12"
