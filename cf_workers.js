@@ -74,11 +74,14 @@ class QwenService {
 
         const textToTranslate = lastMessage.content;
 
-        // 模拟翻译请求
+        // 使用 translation_options 参数
+        const sourceLang = req.translation_options?.source_lang || 'auto';
+        const targetLang = req.translation_options?.target_lang || 'ZH';
+
         const [translatedText, _] = await this.translateSingleText(
             textToTranslate,
-            this.mapLanguage("auto"),
-            this.mapLanguage("ZH")
+            this.mapLanguage(sourceLang),
+            this.mapLanguage(targetLang)
         );
 
         const completionId = `chatcmpl-${crypto.randomUUID()}`;
@@ -758,19 +761,19 @@ export default {
     <div class="container">
         <div class="header">
             <h1>🌍 QWenMT API 服务</h1>
-            <p>基于通义千问的多格式翻译 API 服务，兼容 DeepLX 和 DeepL API 格式</p>
+            <p>基于通义千问的多格式翻译 API 服务，兼容 DeepLX/DeepL API/原生格式/OpenAI 格式</p>
         </div>
         
         <div class="features">
             <div class="feature-card">
                 <div>🚀</div>
                 <h3>高性能</h3>
-                <p>基于通义千问大模型，提供高质量翻译</p>
+                <p>基于通义千问MT大模型，提供高质量翻译</p>
             </div>
             <div class="feature-card">
                 <div>🔄</div>
                 <h3>多格式兼容</h3>
-                <p>支持 DeepLX、DeepL API 和原生格式</p>
+                <p>支持 DeepLX/DeepL API/原生格式/OpenAI 格式</p>
             </div>
             <div class="feature-card">
                 <div>🛡️</div>
@@ -916,8 +919,18 @@ export API_KEYS=sk-key1,sk-key2,sk-key3</pre>
       "role": "user",
       "content": "Hello world"
     }
-  ]
+  ],
+  "translation_options": {
+    "source_lang": "auto",
+    "target_lang": "ZH"
+  }
 }'</pre>
+                    <p><strong>translation_options 参数说明：</strong></p>
+                    <ul>
+                        <li><code>source_lang</code>: 源语言代码，默认为 "auto" (自动检测)</li>
+                        <li><code>target_lang</code>: 目标语言代码，默认为 "ZH" (中文)</li>
+                        <li>支持的语言代码：EN (英语), ZH (中文), JA (日语), KO (韩语), FR (法语), ES (西班牙语), RU (俄语), DE (德语) 等</li>
+                    </ul>
                 </details>
             </div>
         </div>
