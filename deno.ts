@@ -861,7 +861,7 @@ const handler = (req: Request): Promise<Response> | Response => {
     <div class="container">
         <div class="header">
             <h1>🌍 QWenMT API 服务</h1>
-            <p>基于通义千问的多格式翻译 API 服务，兼容 DeepLX 和 DeepL API 格式</p>
+            <p>基于通义千问的多格式翻译 API 服务，兼容 DeepLX/DeepL API/原生格式/OpenAI 格式</p>
         </div>
         
         <div class="features">
