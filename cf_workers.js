@@ -938,7 +938,13 @@ export API_KEYS=sk-key1,sk-key2,sk-key3</pre>
         <div class="health-check">
             <a href="/health" class="btn">检查服务状态</a>
         </div>
-        
+
+        <div class="version">
+            <p>版本: 0.0.1 (Cloudflare 兼容版)</p>
+            <p>原始作者: <a href="https://linux.do/u/meselson">大魔王</a> | 修改与维护: <a href="https://github.com/belingud">Belingud</a></p>
+            <p>https://github.com/belingud/qwen3mt2api</p>
+        </div>
+
     </div>
 </body>
 </html>`;
