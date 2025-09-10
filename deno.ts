@@ -1038,6 +1038,13 @@ export API_KEYS=sk-key1,sk-key2,sk-key3</pre>
         <div class="health-check">
             <a href="/health" class="btn">检查服务状态</a>
         </div>
+
+        <div class="version">
+            <p>版本: 0.0.2</p>
+            <p>Powered by 通义千问 ❤️ <a href="https://linux.do/u/meselson">大魔王</a></p>
+            <p>Modified by <a href="https://github.com/belingud">Belingud</a></p>
+            <p>https://github.com/belingud/qwen3mt2api</p>
+        </div>
     </div>
 </body>
 </html>`;
